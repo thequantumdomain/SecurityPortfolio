@@ -1,7 +1,6 @@
 # Boss Bridge Audit Report
 
 Prepared by: Terome Mensah
-Lead Auditors: Terome Mensah
 
 # Table of contents
 <details>
