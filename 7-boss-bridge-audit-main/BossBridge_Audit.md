@@ -41,7 +41,7 @@ Lead Auditors: Terome Mensah
 </details>
 </br>
 
-# About YOUR_NAME_HERE
+# About Author
 
 Terome Mensah - Blockchain Developer & Smart Contract Security Researcher with expertise in EVM-compatible chains. Languages: Solidity, Rust.
 
