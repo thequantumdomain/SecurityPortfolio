@@ -1,7 +1,6 @@
-# First Flight #3: Thunder Loan - Findings Report
+# Security Report #3: Thunder Loan - Initial Report
 
 # Table of contents
-- ### [Contest Summary](#contest-summary)
 - ### [Results Summary](#results-summary)
 - ## High Risk Findings
     - [H-01. Storage Collision during upgrade](#H-01)
@@ -16,16 +15,7 @@
     - [L-01. getCalculatedFee can be 0](#L-01)
     - [L-02. updateFlashLoanFee() missing event](#L-02)
     - [L-03. Mathematic Operations Handled Without Precision in getCalculatedFee() Function in ThunderLoan.sol](#L-03)
-
-
-# <a id='contest-summary'></a>Contest Summary
-
-### Sponsor: First Flight #3
-
-### Dates: Nov 1st, 2023 - Nov 8th, 2023
-
-[See more contest details here](https://www.codehawks.com/contests/clocopz26004rkx08q1n61wnz)
-
+    - 
 # <a id='results-summary'></a>Results Summary
 
 ### Number of findings:
@@ -38,8 +28,6 @@
 
 ## <a id='H-01'></a>H-01. Storage Collision during upgrade
 
-_Submitted by [0x6a70](/profile/clnupn4c20002mk08inaqc8is), [happyformerlawyer](/profile/clmca6fy60000mp08og4j1koc), [zxarcs](/profile/clk6xhhll0004jy08igg6220s), [shikhar229169](/profile/clk3yh639002emf08ywok1hzf), [alphabuddha1357](/profile/clnxv56t30004l6085wcq3syn), [InAllHonesty](/profile/clkgm90b9000gms085g528phk), [bbcrypt](/profile/cllf3myg90006mb08a2qv3801), [jerseyjoewalcott](/profile/clnueldbf000lky08h4g3kjx4), [TAdev](/profile/clog7yt830000i308nsptid7z), [abhishekthakur](/profile/clkaqh5590000k108p39ktfwl), [nisedo](/profile/clk3saar60000l608gsamuvnw), [aethrouzz](/profile/clmx62ogr0000l90843cr8gtz), [Leogold](/profile/cll3x4wjp0000jv08bizzorhg), [Osora9](/profile/clnvjxx5m0002mr08m4o4dl44), [Ciara](/profile/clnvs09md0006jx08tmvz0w19), [CodeLock](/profile/clo3l5kyo0000mk08r3no7q4n), [wafflemakr](/profile/clmm1t0210000mi08hak3ir5r), [asimaranov](/profile/clo4plnc4001mmi08szfoggg0), [dcheng](/profile/clnw5u1te0006l708th66izul), [Nocturnus](/profile/clk6gsllo0000mn08rjvbjy0x), [lian886](/profile/clk6rtfkx0008mn083rima8eb), [Louis](/profile/clloixi3x0000la08i46r5hc8), [0xhashiman](/profile/clofddxp4001ijz08hm9txokv). Selected submission by: [Leogold](/profile/cll3x4wjp0000jv08bizzorhg)._      
-				
 ### Relevant GitHub Links
 	
 https://github.com/Cyfrin/2023-11-Thunder-Loan/blob/8539c83865eb0d6149e4d70f37a35d9e72ac7404/src/upgradedProtocol/ThunderLoanUpgraded.sol#L95C5-L101C1
@@ -192,9 +180,7 @@ Add the code above to thunderloantest.t.sol and run with `forge test --mt testSl
 it can also be tested with `testFlashLoanAfterUpgrade function` and see the fee properly calculated for flashloan
 
 ## <a id='H-02'></a>H-02. Updating exchange rate on token deposit will inflate asset token's exchange rate faster than expected
-
-_Submitted by [0x6a70](/profile/clnupn4c20002mk08inaqc8is), [zxarcs](/profile/clk6xhhll0004jy08igg6220s), [shikhar229169](/profile/clk3yh639002emf08ywok1hzf), [kumar](/profile/cloeizs9m000ujs088lb7pvj2), [happyformerlawyer](/profile/clmca6fy60000mp08og4j1koc), [araj](/profile/clma4kzm40000lb08cngnui6u), [Leogold](/profile/cll3x4wjp0000jv08bizzorhg), [0xTheBlackPanther](/profile/clnca1ftl0000lf08bfytq099), [KiteWeb3](/profile/clk9pzw3j000smh08313lj91l), [InAllHonesty](/profile/clkgm90b9000gms085g528phk), [bbcrypt](/profile/cllf3myg90006mb08a2qv3801), [TAdev](/profile/clog7yt830000i308nsptid7z), [benbo](/profile/clo4tx3kj0000l808q2ug31l8), [Eric](/profile/clkbqsa510000mi082he56qby), [nisedo](/profile/clk3saar60000l608gsamuvnw), [darksnow](/profile/clk80pzvl000yl608bqwqky5y), [zach030](/profile/clllg9trq0002ml0881bhkegb), [zhuying](/profile/clk5hy2a0000ajy087yh41k20), [aethrouzz](/profile/clmx62ogr0000l90843cr8gtz), [anonditor](/profile/clon1iwns0000jv07ebgls1aj), [0xJimbo](/profile/clkcjsdhb0000l108bm19v6sw), [GoSoul22](/profile/clk7zkyd70002l608iam3ggtg), [Ciara](/profile/clnvs09md0006jx08tmvz0w19), [johnmatrix](/profile/cloiowl4p000rjr088iyg6iod), [0xVinylDavyl](/profile/clkeaiat40000l309ruc9obdh), [anarcheuz](/profile/clmrussuq0008l008ao5w04v1), [Coffee](/profile/clln3vyj7000cml0877uhlb7j), [lian886](/profile/clk6rtfkx0008mn083rima8eb), [abhishekthakur](/profile/clkaqh5590000k108p39ktfwl), [0xSwahili](/profile/clkkxnjij0000m808ykz18zsc), [0xspryon](/profile/clo19fw280000mf08c4yazene), [Nocturnus](/profile/clk6gsllo0000mn08rjvbjy0x), [DenTonylifer](/profile/clocyn92t0003mf088apzq7fo). Selected submission by: [zxarcs](/profile/clk6xhhll0004jy08igg6220s)._      
-				
+    				
 ### Relevant GitHub Links
 	
 https://github.com/Cyfrin/2023-11-Thunder-Loan/blob/8539c83865eb0d6149e4d70f37a35d9e72ac7404/src/protocol/ThunderLoan.sol#L153-L154
@@ -275,9 +261,7 @@ function testExchangeRateUpdatedOnDeposit() public setAllowedToken {
 }
 ```
 
-## <a id='H-03'></a>H-03. fee are less for non standard ERC20 Token
-
-_Submitted by [shikhar229169](/profile/clk3yh639002emf08ywok1hzf), [happyformerlawyer](/profile/clmca6fy60000mp08og4j1koc), [bbcrypt](/profile/cllf3myg90006mb08a2qv3801), [TAdev](/profile/clog7yt830000i308nsptid7z), [0xVinylDavyl](/profile/clkeaiat40000l309ruc9obdh), [Dutch](/profile/clnvncrk9000il408ns2kcgj6), [KiteWeb3](/profile/clk9pzw3j000smh08313lj91l). Selected submission by: [KiteWeb3](/profile/clk9pzw3j000smh08313lj91l)._      
+## <a id='H-03'></a>H-03. fee are less for non standard ERC20 Token    
 				
 ### Relevant GitHub Links
 	
@@ -340,9 +324,7 @@ Manual review
 
 ## Recommendations
 Adjust the precision accordinly with the allowed tokens considering that the non standard ERC20 haven't 18 decimals.
-## <a id='H-04'></a>H-04. All the funds can be stolen if the flash loan is returned using deposit()
-
-_Submitted by [IvanFitro](/profile/clkbfsgal0004me08ro82cg7e), [alsirang](/profile/clnvs6t2c000cjx08zxo9vgf4), [shikhar229169](/profile/clk3yh639002emf08ywok1hzf), [kumar](/profile/cloeizs9m000ujs088lb7pvj2), [Leogold](/profile/cll3x4wjp0000jv08bizzorhg), [InAllHonesty](/profile/clkgm90b9000gms085g528phk), [bbcrypt](/profile/cllf3myg90006mb08a2qv3801), [TAdev](/profile/clog7yt830000i308nsptid7z), [r0ck3tz](/profile/clon4zj7y000cjs08junwc16z), [0xloscar01](/profile/cllgowxgy0002la08qi9bhab4), [wafflemakr](/profile/clmm1t0210000mi08hak3ir5r), [anonditor](/profile/clon1iwns0000jv07ebgls1aj), [Aitor](/profile/clk44j5cn000wl908r2o0n9w5), [0xJimbo](/profile/clkcjsdhb0000l108bm19v6sw), [Pelz](/profile/clokuwofs000yih08n1oqrf6d), [GoSoul22](/profile/clk7zkyd70002l608iam3ggtg), [matthu](/profile/clnukaeq80004lc08xdy9jw90), [johnmatrix](/profile/cloiowl4p000rjr088iyg6iod), [uint256vieet](/profile/clkxj0sw20028l0085e7qx21j), [CodeLock](/profile/clo3l5kyo0000mk08r3no7q4n), [zzz](/profile/clk6zdyd4000gkz0892q2rvyn), [0xspryon](/profile/clo19fw280000mf08c4yazene), [0xhashiman](/profile/clofddxp4001ijz08hm9txokv). Selected submission by: [IvanFitro](/profile/clkbfsgal0004me08ro82cg7e)._      
+## <a id='H-04'></a>H-04. All the funds can be stolen if the flash loan is returned using deposit()   
 				
 ### Relevant GitHub Links
 	
@@ -473,9 +455,7 @@ For example registring the block.number in a variable in **`flashloan()`** and c
 # Medium Risk Findings
 
 ## <a id='M-01'></a>M-01. 'ThunderLoan::setAllowedToken' can permanently lock liquidity providers out from redeeming their tokens 
-
-_Submitted by [happyformerlawyer](/profile/clmca6fy60000mp08og4j1koc), [kumar](/profile/cloeizs9m000ujs088lb7pvj2), [shikhar229169](/profile/clk3yh639002emf08ywok1hzf), [araj](/profile/clma4kzm40000lb08cngnui6u), [Leogold](/profile/cll3x4wjp0000jv08bizzorhg), [Eric](/profile/clkbqsa510000mi082he56qby), [pacelliv](/profile/clk45g5zs003smg08s6utu2a0), [0xSwahili](/profile/clkkxnjij0000m808ykz18zsc), [nisedo](/profile/clk3saar60000l608gsamuvnw), [r0ck3tz](/profile/clon4zj7y000cjs08junwc16z), [Ciara](/profile/clnvs09md0006jx08tmvz0w19), [CodeLock](/profile/clo3l5kyo0000mk08r3no7q4n), [anarcheuz](/profile/clmrussuq0008l008ao5w04v1), [wafflemakr](/profile/clmm1t0210000mi08hak3ir5r), [Coffee](/profile/clln3vyj7000cml0877uhlb7j), [0xmusashi](/profile/cllfe326u0004mm08qjo85t59), [0xspryon](/profile/clo19fw280000mf08c4yazene), [aethrouzz](/profile/clmx62ogr0000l90843cr8gtz). Selected submission by: [Coffee](/profile/clln3vyj7000cml0877uhlb7j)._      
-				
+     				
 ### Relevant GitHub Links
 	
 https://github.com/Cyfrin/2023-11-Thunder-Loan/blob/8539c83865eb0d6149e4d70f37a35d9e72ac7404/src/protocol/ThunderLoan.sol#L227-L244
@@ -586,9 +566,7 @@ It would be suggested to add a check if that assetToken holds any balance of the
         }
     }
 ```
-## <a id='M-02'></a>M-02. Attacker can minimize `ThunderLoan::flashloan` fee via price oracle manipulation
-
-_Submitted by [ironcladmerc](/profile/clnue0hoa0006ky08p2fc7lv5), [uba7](/profile/cllina1ss0000jt08ols0vdm7), [0xTheBlackPanther](/profile/clnca1ftl0000lf08bfytq099), [alphabuddha1357](/profile/clnxv56t30004l6085wcq3syn), [zhuying](/profile/clk5hy2a0000ajy087yh41k20), [nisedo](/profile/clk3saar60000l608gsamuvnw), [zxarcs](/profile/clk6xhhll0004jy08igg6220s), [Ciara](/profile/clnvs09md0006jx08tmvz0w19), [anarcheuz](/profile/clmrussuq0008l008ao5w04v1), [aethrouzz](/profile/clmx62ogr0000l90843cr8gtz), [ZedBlockchain](/profile/clk6kgukh0008ld088n5wns9l). Selected submission by: [Ciara](/profile/clnvs09md0006jx08tmvz0w19)._      
+## <a id='M-02'></a>M-02. Attacker can minimize `ThunderLoan::flashloan` fee via price oracle manipulation    
 				
 ### Relevant GitHub Links
 	
@@ -835,8 +813,7 @@ Use a manipulation-resistant oracle such as Chainlink.
 - Forge
 
 ## <a id='M-03'></a>M-03. `ThunderLoan:: deposit` is not compatible with Fee tokens and could be exploited by draining other users funds, Making Other user Looses there deposit and yield
-
-_Submitted by [abhishekthakur](/profile/clkaqh5590000k108p39ktfwl), [pacelliv](/profile/clk45g5zs003smg08s6utu2a0), [alphabuddha1357](/profile/clnxv56t30004l6085wcq3syn), [nisedo](/profile/clk3saar60000l608gsamuvnw), [darksnow](/profile/clk80pzvl000yl608bqwqky5y), [ZedBlockchain](/profile/clk6kgukh0008ld088n5wns9l). Selected submission by: [abhishekthakur](/profile/clkaqh5590000k108p39ktfwl)._      
+     
 				
 ### Relevant GitHub Links
 	
@@ -1068,9 +1045,7 @@ function deposit(IERC20 token, uint256 amount) external revertIfZero(amount) rev
 # Low Risk Findings
 
 ## <a id='L-01'></a>L-01. getCalculatedFee can be 0
-
-_Submitted by [BowTiedJerboa](/profile/cloc8261b001al208obsdjnwj), [0x6a70](/profile/clnupn4c20002mk08inaqc8is), [anarcheuz](/profile/clmrussuq0008l008ao5w04v1). Selected submission by: [0x6a70](/profile/clnupn4c20002mk08inaqc8is)._      
-				
+ 				
 ### Relevant GitHub Links
 	
 https://github.com/Cyfrin/2023-11-Thunder-Loan/blob/8539c83865eb0d6149e4d70f37a35d9e72ac7404/src/protocol/ThunderLoan.sol#L246
@@ -1100,9 +1075,7 @@ Foundry, Manual review
 ## Recommendations
 A minimum fee can be used to offset the calculation, though it is not that important.
 ## <a id='L-02'></a>L-02. updateFlashLoanFee() missing event
-
-_Submitted by [uba7](/profile/cllina1ss0000jt08ols0vdm7), [alphabuddha1357](/profile/clnxv56t30004l6085wcq3syn), [Charalab0ts](/profile/clnvg04ao0000mi08o5ui3i8u), [KiteWeb3](/profile/clk9pzw3j000smh08313lj91l), [DuncanDuMond](/profile/clnzr98ch0000mg08irvcdl92), [nisedo](/profile/clk3saar60000l608gsamuvnw), [kanastasoff](/profile/clobfwqy2000il508l56i294o), [Ciara](/profile/clnvs09md0006jx08tmvz0w19), [Arie71](/profile/clnud7mxo0000l408ex25njv8), [lian886](/profile/clk6rtfkx0008mn083rima8eb). Selected submission by: [KiteWeb3](/profile/clk9pzw3j000smh08313lj91l)._      
-				
+    				
 ### Relevant GitHub Links
 	
 https://github.com/Cyfrin/2023-11-Thunder-Loan/blob/8539c83865eb0d6149e4d70f37a35d9e72ac7404/src/protocol/ThunderLoan.sol#L257
@@ -1145,9 +1118,7 @@ Emit an event for critical parameter changes.
     }
 ```
 ## <a id='L-03'></a>L-03. Mathematic Operations Handled Without Precision in getCalculatedFee() Function in ThunderLoan.sol
-
-_Submitted by [benbo](/profile/clo4tx3kj0000l808q2ug31l8), [matthu](/profile/clnukaeq80004lc08xdy9jw90), [kanastasoff](/profile/clobfwqy2000il508l56i294o), [CodeLock](/profile/clo3l5kyo0000mk08r3no7q4n), [0xspryon](/profile/clo19fw280000mf08c4yazene). Selected submission by: [CodeLock](/profile/clo3l5kyo0000mk08r3no7q4n)._      
-				
+ 				
 ### Relevant GitHub Links
 	
 https://github.com/Cyfrin/2023-11-Thunder-Loan/blob/main/src/protocol/ThunderLoan.sol#L246
