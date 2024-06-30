@@ -1,39 +1,7 @@
----
-title: Boss Bridge Audit Report
-author: YOUR_NAME_HERE
-date: September 1, 2023
-header-includes:
-  - \usepackage{titling}
-  - \usepackage{graphicx}
----
-\begin{titlepage}
-    \centering
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.5\textwidth]{logo.pdf} 
-    \end{figure}
-    \vspace*{2cm}
-    {\Huge\bfseries Boss Bridge Initial Audit Report\par}
-    \vspace{1cm}
-    {\Large Version 0.1\par}
-    \vspace{2cm}
-    {\Large\itshape Cyfrin.io\par}
-    \vfill
-    {\large \today\par}
-\end{titlepage}
-
-\maketitle
-
 # Boss Bridge Audit Report
 
-Prepared by: YOUR_NAME_HERE
-Lead Auditors: 
-
-- [YOUR_NAME_HERE](enter your URL here)
-
-Assisting Auditors:
-
-- None
+Prepared by: Terome Mensah
+Lead Auditors: Terome Mensah
 
 # Table of contents
 <details>
@@ -42,7 +10,7 @@ Assisting Auditors:
 
 - [Boss Bridge Audit Report](#boss-bridge-audit-report)
 - [Table of contents](#table-of-contents)
-- [About YOUR\_NAME\_HERE](#about-your_name_here)
+- [About Terome Mensah](#about-your_name_here)
 - [Disclaimer](#disclaimer)
 - [Risk Classification](#risk-classification)
 - [Audit Details](#audit-details)
@@ -75,11 +43,11 @@ Assisting Auditors:
 
 # About YOUR_NAME_HERE
 
-<!-- Tell people about you! -->
+Terome Mensah - Blockchain Developer & Smart Contract Security Researcher with expertise in EVM-compatible chains. Languages: Solidity, Rust.
 
 # Disclaimer
 
-The YOUR_NAME_HERE team makes all effort to find as many vulnerabilities in the code in the given time period, but holds no responsibilities for the findings provided in this document. A security audit by the team is not an endorsement of the underlying business or product. The audit was time-boxed and the review of the code was solely on the security aspects of the solidity implementation of the contracts.
+Terome Mensah makes all effort to find as many vulnerabilities in the code in the given time period, but holds no responsibilities for the findings provided in this document. A security audit by the team is not an endorsement of the underlying business or product. The audit was time-boxed and the review of the code was solely on the security aspects of the solidity implementation of the contracts.
 
 # Risk Classification
 
@@ -288,8 +256,6 @@ function testCanCallVaultApproveFromBridgeAndDrainVault() public {
 
 Consider disallowing attacker-controlled external calls to sensitive components of the bridge, such as the `L1Vault` contract.
 
-
-
 ### [H-5] `CREATE` opcode does not work on zksync era
 
 ### [H-6] `L1BossBridge::depositTokensToL2`'s `DEPOSIT_LIMIT` check allows contract to be DoS'd
@@ -299,8 +265,7 @@ Consider disallowing attacker-controlled external calls to sensitive components 
 *Not shown in video*
 
 ### [H-8] `TokenFactory::deployToken` locks tokens forever 
-*Not shown in video*
-
+*Not shown*
 
 ## Medium
 
@@ -323,7 +288,7 @@ Modify the `sendToL1` function to include a new event that is always emitted upo
 *Not shown in video*
 ### [L-2] `TokenFactory::deployToken` can create multiple token with same `symbol`
 
-*Not shown in video*
+*Not shown*
 ### [L-3] Unsupported opcode PUSH0
 
 ## Informational
