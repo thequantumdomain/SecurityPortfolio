@@ -1,35 +1,6 @@
----
-title: Protocol Audit Report
-author: Cyfrin.io
-date: March 7, 2023
-header-includes:
-  - \usepackage{titling}
-  - \usepackage{graphicx}
----
 
-\begin{titlepage}
-    \centering
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.5\textwidth]{logo.pdf} 
-    \end{figure}
-    \vspace*{2cm}
-    {\Huge\bfseries TSwap Protocol Audit Report\par}
-    \vspace{1cm}
-    {\Large Version 1.0\par}
-    \vspace{2cm}
-    {\Large\itshape Cyfrin.io\par}
-    \vfill
-    {\large \today\par}
-\end{titlepage}
+<!-- Report starts here! -->
 
-\maketitle
-
-<!-- Your report starts here! -->
-
-Prepared by: [Cyfrin](https://cyfrin.io)
-Lead Auditors: 
-- xxxxxxx
 
 # Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -59,11 +30,11 @@ Lead Auditors:
 
 # Protocol Summary
 
-Protocol does X, Y, Z
+This project is meant to be a permissionless way for users to swap assets between each other at a fair price. You can think of T-Swap as a decentralized asset/token exchange (DEX). T-Swap is known as an Automated Market Maker (AMM) because it doesn't use a normal "order book" style exchange, instead it uses "Pools" of an asset. It is similar to Uniswap. 
 
 # Disclaimer
 
-The YOUR_NAME_HERE team makes all effort to find as many vulnerabilities in the code in the given time period, but holds no responsibilities for the findings provided in this document. A security audit by the team is not an endorsement of the underlying business or product. The audit was time-boxed and the review of the code was solely on the security aspects of the Solidity implementation of the contracts.
+We make all effort to find as many vulnerabilities in the code in the given time period, but holds no responsibilities for the findings provided in this document. A security audit by the team is not an endorsement of the underlying business or product. The audit was time-boxed and the review of the code was solely on the security aspects of the Solidity implementation of the contracts.
 
 # Risk Classification
 
