@@ -183,7 +183,3 @@ forge coverage --report debug
 ## Known Issues
 
 - None
-
-# CodeHawks
-
-Hasn't happened yet for this repo!
